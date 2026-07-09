@@ -1,0 +1,205 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+@custom-variant hc (&:is(.hc *));
+
+/*
+ * Moyassar (مُيسّر) — design tokens
+ * Palette: Deep Blue #0F4C81, Teal #00897B, Orange #FF9800,
+ *          Success #2E7D32, Error #D32F2F, Surface #F8FAFC / #FFFFFF
+ * All colors in oklch. WCAG AA targeted.
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-warning: var(--warning);
+  --color-warning-foreground: var(--warning-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  --font-sans: "IBM Plex Sans Arabic", "Inter", system-ui, -apple-system, sans-serif;
+}
+
+:root {
+  --radius: 0.875rem;
+
+  --background: oklch(0.985 0.005 240);            /* #F8FAFC */
+  --foreground: oklch(0.20 0.04 250);              /* near-black blue */
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.20 0.04 250);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.20 0.04 250);
+
+  --primary: oklch(0.40 0.12 250);                 /* Deep Blue #0F4C81 */
+  --primary-foreground: oklch(1 0 0);
+
+  --secondary: oklch(0.56 0.10 185);               /* Teal #00897B */
+  --secondary-foreground: oklch(1 0 0);
+
+  --accent: oklch(0.74 0.16 60);                   /* Orange #FF9800 */
+  --accent-foreground: oklch(0.22 0.05 60);
+
+  --muted: oklch(0.96 0.01 240);
+  --muted-foreground: oklch(0.42 0.03 250);
+
+  --success: oklch(0.52 0.14 145);                 /* #2E7D32 */
+  --success-foreground: oklch(1 0 0);
+  --warning: oklch(0.74 0.16 60);
+  --warning-foreground: oklch(0.22 0.05 60);
+
+  --destructive: oklch(0.55 0.22 28);              /* #D32F2F */
+  --destructive-foreground: oklch(1 0 0);
+
+  --border: oklch(0.90 0.01 240);
+  --input: oklch(0.93 0.01 240);
+  --ring: oklch(0.40 0.12 250);
+
+  --chart-1: oklch(0.40 0.12 250);
+  --chart-2: oklch(0.56 0.10 185);
+  --chart-3: oklch(0.74 0.16 60);
+  --chart-4: oklch(0.52 0.14 145);
+  --chart-5: oklch(0.55 0.22 28);
+
+  --sidebar: oklch(1 0 0);
+  --sidebar-foreground: oklch(0.20 0.04 250);
+  --sidebar-primary: oklch(0.40 0.12 250);
+  --sidebar-primary-foreground: oklch(1 0 0);
+  --sidebar-accent: oklch(0.96 0.01 240);
+  --sidebar-accent-foreground: oklch(0.20 0.04 250);
+  --sidebar-border: oklch(0.90 0.01 240);
+  --sidebar-ring: oklch(0.40 0.12 250);
+}
+
+.dark {
+  --background: oklch(0.18 0.03 250);
+  --foreground: oklch(0.97 0.005 240);
+  --card: oklch(0.22 0.03 250);
+  --card-foreground: oklch(0.97 0.005 240);
+  --popover: oklch(0.22 0.03 250);
+  --popover-foreground: oklch(0.97 0.005 240);
+  --primary: oklch(0.72 0.12 240);
+  --primary-foreground: oklch(0.15 0.04 250);
+  --secondary: oklch(0.62 0.10 185);
+  --secondary-foreground: oklch(0.15 0.04 250);
+  --accent: oklch(0.78 0.16 60);
+  --accent-foreground: oklch(0.18 0.05 60);
+  --muted: oklch(0.27 0.03 250);
+  --muted-foreground: oklch(0.78 0.02 240);
+  --success: oklch(0.62 0.14 145);
+  --success-foreground: oklch(0.15 0.04 145);
+  --warning: oklch(0.78 0.16 60);
+  --warning-foreground: oklch(0.18 0.05 60);
+  --destructive: oklch(0.65 0.22 28);
+  --destructive-foreground: oklch(1 0 0);
+  --border: oklch(1 0 0 / 14%);
+  --input: oklch(1 0 0 / 18%);
+  --ring: oklch(0.72 0.12 240);
+}
+
+/* High-contrast mode (WCAG AAA targeting) */
+.hc {
+  --background: oklch(1 0 0);
+  --foreground: oklch(0 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0 0 0);
+  --primary: oklch(0 0 0);
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0 0 0);
+  --secondary-foreground: oklch(1 0 0);
+  --accent: oklch(0.45 0.25 28);
+  --accent-foreground: oklch(1 0 0);
+  --muted: oklch(0.96 0 0);
+  --muted-foreground: oklch(0.15 0 0);
+  --border: oklch(0 0 0);
+  --input: oklch(0.95 0 0);
+  --ring: oklch(0 0 0);
+  --destructive: oklch(0.40 0.25 28);
+  --success: oklch(0.30 0.18 145);
+}
+
+@layer base {
+  * { border-color: var(--color-border); }
+
+  html { font-size: calc(16px * var(--font-scale, 1)); }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Visible focus ring on EVERY interactive element */
+  :where(a, button, [role="button"], input, select, textarea, [tabindex]):focus-visible {
+    outline: 3px solid var(--color-ring);
+    outline-offset: 2px;
+    border-radius: var(--radius-sm);
+  }
+
+  /* Reduced motion */
+  .reduce-motion *, .reduce-motion *::before, .reduce-motion *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  /* Minimum 44x44 hit target on primary actions */
+  .tap-target { min-width: 44px; min-height: 44px; }
+
+  /* Skip link */
+  .skip-link {
+    position: absolute;
+    inset-inline-start: 0;
+    top: -100px;
+    z-index: 100;
+    padding: 0.75rem 1.25rem;
+    background: var(--color-primary);
+    color: var(--color-primary-foreground);
+    font-weight: 600;
+    border-radius: 0 0 var(--radius-md) var(--radius-md);
+  }
+  .skip-link:focus { top: 0; }
+}
